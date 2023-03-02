@@ -1,3 +1,4 @@
+import { Nav } from './components/nav'
 import './globals.css'
 
 export const metadata = {
@@ -11,8 +12,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className='dark'>
+      <body>
+        <div className="overflow-hidden w-full h-full relative">
+          <div className="flex h-full flex-1 flex-col md:pl-[260px]">
+            {children}
+          </div>
+          <Nav />
+        </div>
+      </body>
     </html>
   )
 }
